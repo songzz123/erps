@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>导航</title>
+	<link rel="stylesheet" type="text/css" href="../../../../static/css/easyui_3.css">
+	<link rel="stylesheet" type="text/css" href="../../../../static/css/icon_2.css">
+	<link rel="stylesheet" type="text/css" href="../../../../static/css/css_2.css">
+	<script type="text/javascript" src="../../../../static/js/jquery.min_3.js"></script>
+	<script type="text/javascript" src="../../../../static/js/jquery.easyui.min_2.js"></script>
+</head>
+
+<body class="left-body">
+	<div class="easyui-accordion lee-menu-class" data-options="fit:true,border:false">
+		<div title="供应商管理" data-options="selected:true">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../Supply/add.html',this)" data-id="1" data-name="供应商管理">新增供应商</li>
+				<li onclick="addPanel('../Supply/index.html',this)" data-id="1" data-name="供应商管理">供应商目录</li>
+			</ul>
+		</div>
+		<div title="采购管理">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../Purchase/plan_add.html',this)" data-id="4" data-name="采购管理">新增采购计划</li>
+				<li onclick="addPanel('../Purchase/index.html',this)" data-id="4" data-name="采购管理">采购计划列表</li>
+				<li onclick="addPanel('../Purchase/group_list.html',this)" data-id="4" data-name="采购管理">采购订单列表</li>
+				<li onclick="addPanel('../Purchase/reserve_list.html',this)" data-id="4" data-name="采购管理">约仓单列表</li>
+			</ul>
+		</div>
+		<div title="入库">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../Warehouse/in.html',this)" data-id="6" data-name="入库">入库单操作</li>
+				<li onclick="addPanel('../Warehouse/inlist.html',this)" data-id="6" data-name="入库">入库单列表</li>
+			</ul>
+		</div>
+		<div title="出库">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../Warehouse/out.html',this)" data-id="8" data-name="出库">出库单操作</li>
+				<li onclick="addPanel('../Warehouse/outlist.html',this)" data-id="8" data-name="出库">出库单列表</li>
+			</ul>
+		</div>
+		<div title="仓库设置">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../Warehousedistrict/index.html',this)" data-id="10" data-name="仓库设置">库区库位设置</li>
+				<li onclick="addPanel('../Warehouse/index.html',this)" data-id="10" data-name="仓库设置">仓库列表</li>
+				<li onclick="addPanel('../Shipping/index.html',this)" data-id="10" data-name="仓库设置">指定物流</li>
+				<li onclick="addPanel('../Freight/frelist.html',this)" data-id="10" data-name="仓库设置">运费模板</li>
+			</ul>
+		</div>
+		<div title="商家管理">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../Services/add_service.html',this)" data-id="104" data-name="商家管理">新增商家管理</li>
+				<li onclick="addPanel('../Services/services_index.html',this)" data-id="104" data-name="商家管理">商家管理列表</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function addPanel(url, _this) {
+		var title = $(_this).data('name'),
+			id = $(_this).data('id');
+		window.parent.addPanel(url, title, id);
+	}
+</script>
+
+</html>

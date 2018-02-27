@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>导航</title>
+	<link rel="stylesheet" type="text/css" href="../../../../static/css/easyui_3.css">
+	<link rel="stylesheet" type="text/css" href="../../../../static/css/icon_2.css">
+	<link rel="stylesheet" type="text/css" href="../../../../static/css/css_2.css">
+	<script type="text/javascript" src="../../../../static/js/jquery.min_3.js"></script>
+	<script type="text/javascript" src="../../../../static/js/jquery.easyui.min_2.js"></script>
+</head>
+
+<body class="left-body">
+	<div class="easyui-accordion lee-menu-class" data-options="fit:true,border:false">
+		<div title="商品管理" data-options="selected:true">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../../Plugin/SKU/add.html',this)" data-id="2" data-name="商品管理">新增产品</li>
+				<li onclick="addPanel('../../Plugin/Goods/goodsReports.html',this)" data-id="2" data-name="商品管理">商品目录列表</li>
+				<li onclick="addPanel('../../Plugin/Goods/shelves.html',this)" data-id="2" data-name="商品管理">商品上下架</li>
+				<li onclick="addPanel('../../Plugin/Goods/stockWarn.html',this)" data-id="2" data-name="商品管理">商品库存预警设置</li>
+				<li onclick="addPanel('../../Plugin/Goods/virtualStockWithSendDate.html',this)" data-id="2" data-name="商品管理">虚库与发货期设置</li>
+			</ul>
+		</div>
+		<div title="商品资料管理">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../../Plugin/Goods/goodsInfo.html',this)" data-id="18" data-name="商品资料管理">商品资料维护</li>
+				<li onclick="addPanel('../../Plugin/Goods/tag.html',this)" data-id="18" data-name="商品资料管理">商品标签管理</li>
+				<li onclick="addPanel('../../Plugin/Goods/unit.html',this)" data-id="18" data-name="商品资料管理">单位管理</li>
+				<li onclick="addPanel('../../Plugin/Products/lists.html',this)" data-id="18" data-name="商品资料管理">产品列表</li>
+				<li onclick="addPanel('../../Plugin/Products/check.html',this)" data-id="18" data-name="商品资料管理">产品审核</li>
+			</ul>
+		</div>
+		<div title="品牌品类管理">
+			<ul class="lee-menu-list">
+				<li onclick="addPanel('../../Plugin/Goods/models.html',this)" data-id="87" data-name="品牌品类管理">属性管理</li>
+				<li onclick="addPanel('../../Plugin/Brand/index.html',this)" data-id="87" data-name="品牌品类管理">品牌目录</li>
+				<li onclick="addPanel('../../Plugin/goodsCate/category.html',this)" data-id="87" data-name="品牌品类管理">商品分类</li>
+				<li onclick="addPanel('../../Plugin/Brand/brandbind.html',this)" data-id="87" data-name="品牌品类管理">品牌绑定</li>
+				<li onclick="addPanel('../Prorule/r_index.html',this)" data-id="87" data-name="品牌品类管理">商品货号规则查询</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function addPanel(url, _this) {
+		var title = $(_this).data('name'),
+			id = $(_this).data('id');
+		window.parent.addPanel(url, title, id);
+	}
+</script>
+
+</html>
